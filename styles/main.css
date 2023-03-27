@@ -1,0 +1,309 @@
+/* =========== UNIVERSAL SELECTOR =========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* =========== SHADOW TEXT ================= */
+.shadow {
+    text-shadow: 1px 1px 15px maroon;
+    font-variant: small-caps;
+    font-weight: bolder;
+}
+
+/*=======================================================
+
+                   ROOT ELEMENTS
+
+=======================================================*/
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/*=======================================================
+
+                      HEADER
+
+=======================================================*/
+header {
+    border-bottom: 3px solid steelblue;
+    background-image: linear-gradient(white, lightsteelblue);
+    display: flex;
+}
+header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+header h2 {
+    font-size: 250%;
+    font-style: italic;
+    color: steelblue;
+    text-shadow: 3px 3px 12px steelblue;
+    
+}
+
+header img {
+    max-width: 140px;
+    min-width: 70px;
+    width: 100%;
+    margin: 1em;
+}
+
+/*=======================================================
+
+             NAVIGATION MENU - #nav_menu
+
+=======================================================*/
+#nav_menu {
+    border-bottom: 3px solid steelblue;
+    background-color: steelblue;
+    
+}
+#nav_menu ul {
+    list-style-type: none;
+    position: relative;
+    display: flex;
+}
+#nav_menu ul li {
+    width: 20%;
+}
+#nav_menu ul li a {
+    text-align: center;
+    display: block;
+    padding: .7em 0;
+    background-color: steelblue;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+#nav_menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+#nav_menu ul ul li a {
+    text-align: left;
+    padding-left: 12px;
+}
+#nav_menu ul li:hover > ul {
+    display: block;
+}
+#nav_menu a:hover {
+    color: black;
+    background-color: lightsteelblue;
+}
+
+/* ==================================================
+
+       LEFT ASIDE NAVIGATION LIST - #nav_list
+
+===================================================*/             
+#nav_list ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5vh;
+}
+#nav_list li {
+    width: 90%;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+}
+#nav_list a {
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: lightsteelblue;
+    padding: .5em;
+    color: black;
+}
+#nav_list a:hover {
+    background-color: steelblue;
+    color: white;
+}
+
+/*===============================================
+
+                MAIN ELEMENTS
+
+===============================================*/
+/* ============= LINKS ======================= */
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: steelblue;
+}
+a:hover, a:focus {
+    color: maroon;
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    gap: 1vw;
+    padding: 2vh 0;
+    justify-content: center;
+}
+section {
+    margin: 1vh;
+    flex: 0 1 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+section h3, section h4, #rightcol h4 {
+    margin-top: 1.5vh;
+}
+section h1 {
+    margin: 0 0 2vh;
+    text-align: center;
+}
+aside {
+    flex: 0 1 300px;
+}
+#rightcol {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    background-color: antiquewhite;
+    margin: 1vh;
+    padding: 1vh;
+    border: 1px solid steelblue;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 2px black;
+}
+aside h3 {
+    color: maroon;
+    font-size: 110%;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+blockquote {
+    width: 80%;
+    margin: 0 auto 1vh;
+    padding: 10px;
+    border-left: 25px solid steelblue;
+    border-top: 3px solid steelblue;
+    border-bottom: 3px solid steelblue;
+    border-right: 3px solid steelblue   ;
+    background-color: lightsteelblue;
+    border-radius: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 120%;
+    font-style: italic;
+}
+blockquote:hover {
+    background-color: steelblue;
+    color: white;
+}
+
+/*==================================================
+
+                       FOOTER
+
+==================================================*/                       
+footer {
+    /* clear: both; */
+    background-color: steelblue;
+    padding: 15px 0;
+}
+footer p {
+    font-size: 75%;
+    text-align: center;
+    font-variant: small-caps;
+    color: white;
+}
+
+#mobilemenu {
+    display: none;
+}
+
+/*=============================================================
+
+                  MEDIA QUERIES
+
+=============================================================*/
+@media only screen and (max-width: 900px) {
+    html {
+        background-image: none;
+    }
+    body {
+         box-shadow: none;
+         border: none;
+         font-size: 90%;
+         border-radius: 0;
+    }
+    main {
+        flex-wrap: wrap;
+    }
+    #leftcol {
+        flex: 0 0 75%;
+        align-self: center;
+        order: 1;
+        margin-top: 2vh;
+    }
+    section {
+        flex: 1 1 70%;
+    }
+    #rightcol {
+        flex: 1 1 30%;
+    }
+    header, footer {
+        border-radius: 0;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 479px) {
+    header, header div {
+        flex-direction: column;
+        align-items: center;
+    }
+    #nav_menu ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #nav_menu ul li {
+        width: 100%;
+    }
+    #nav_menu ul li:nth-child(1) {
+        display: none;
+    }
+    #nav_menu ul li a {
+        padding: .5em 0;
+    }
+    #nav_menu ul li:hover > ul {
+        display: none;
+    }
+
+    h1 {
+        font-size: 150%;
+    }
+
+    #rightcol {
+        flex: 1 1 100%;
+        margin: 0;
+        padding: 2vh;
+        border: 0;
+        border-radius: 0%;
+        border-top: 1px solid steelblue;
+        border-bottom: 1px solid steelblue;
+    }
+
+}
+
